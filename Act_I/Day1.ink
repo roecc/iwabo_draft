@@ -64,37 +64,44 @@ You stand up and look around.
 
 
 === Carton ===
-*[read the first letter]
+*[read first letter]
     A letter from the elderly care facility your father lived in informing you of his recent passing. The box contains keepsakes he seemed to hold especially dear, please pick out what's yours and send on the rest.
     ->Carton
-*[read the second letter]
+*[read second letter]
     “Daryl,
         Everything I did, I did for you. There isn’t much time left. Nobody knows.
         39°35'18.3"N 104°27'42.7"W
         
         Harold”
     ->Carton
-*[open the carton]
++[open carton]
     Character creation, you are what you keep.
     ->Contents
 *leave
     ->Bedroom
 
 = Contents
-* Deer Antler
+SkillCount is {skillCount}
+You are Hunter {hunter}
++ Deer Antler
     Sharp eyes and sharper instincts. It's hunt or be hunted.
-    **{not hunter}[keep]
+    ++{not hunter}[keep]
         ~ hunter = true
         ~ skillCount += 1
         ->Contents
-    **[put back]
+    ++[put back]
+        {hunter: 
+            ~ skillCount -= 1
+        }
+        ~ hunter = false
         ->Contents
-* Deer Antler
++ Deer Antler
     Sharp eyes and sharper instincts. It's hunt or be hunted.
-    **{not hunter}[keep]
+    ++{not hunter}[keep]
         ~ hunter = true
         ~ skillCount += 1
         ->Contents
-    **[put back]
+    ++[put back]
         ->Contents
--> END
+* [close carton]
+    ->Carton
