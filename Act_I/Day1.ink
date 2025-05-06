@@ -1,9 +1,6 @@
 VAR dressed = false
 VAR brushedTeeth = false
-
-VAR skillCount = 0
-VAR hunter = false
-
+VAR interruptedApril = false
 
 === Start ===
 DARYL starts as if from a nightmare but quickly settles himself. He sits up at the edge of the bed, hunched forward, his face buried in his hands before they slide down, folding below his chin.
@@ -31,18 +28,17 @@ You stand up and look around.
     ->Bathroom
 ->Bedroom
 +[hallway]
+{skillCount==0:
     As you walk toward the door, you stub your toe on the carton.
-    **[yell at the carton]
+    ++[yell at the carton]
         The carton looks unimpressed.
         ->Bedroom
-    **[hold it in]
+    ++[hold it in]
         You take a deep breath.
         ->Bedroom
-->Bedroom
-
-
--> END
-
+  - else:
+    ->Hallway
+}
 
 
 = Bathroom
@@ -60,48 +56,24 @@ You stand up and look around.
     ->Bedroom
 
 
-
-
-
-=== Carton ===
-*[read first letter]
-    A letter from the elderly care facility your father lived in informing you of his recent passing. The box contains keepsakes he seemed to hold especially dear, please pick out what's yours and send on the rest.
-    ->Carton
-*[read second letter]
-    “Daryl,
-        Everything I did, I did for you. There isn’t much time left. Nobody knows.
-        39°35'18.3"N 104°27'42.7"W
-        
-        Harold”
-    ->Carton
-+[open carton]
-    Character creation, you are what you keep.
-    ->Contents
-*leave
+=== Hallway ===
+You are now in the Hallway. The door to APRIL's room is ajar, sunlight falling through the crack. {not interruptedApril: With it the gentle strumming of her guitar.} The sizzling of batter on butter from the kitchen downstairs. JUNE's room just behind the stairway.
++go to bedroom
     ->Bedroom
++go to april's room
+    ->AprilsRoom
+    
 
-= Contents
-SkillCount is {skillCount}
-You are Hunter {hunter}
-+ Deer Antler
-    Sharp eyes and sharper instincts. It's hunt or be hunted.
-    ++{not hunter}[keep]
-        ~ hunter = true
-        ~ skillCount += 1
-        ->Contents
-    ++[put back]
-        {hunter: 
-            ~ skillCount -= 1
-        }
-        ~ hunter = false
-        ->Contents
-+ Deer Antler
-    Sharp eyes and sharper instincts. It's hunt or be hunted.
-    ++{not hunter}[keep]
-        ~ hunter = true
-        ~ skillCount += 1
-        ->Contents
-    ++[put back]
-        ->Contents
-* [close carton]
-    ->Carton
+=== AprilsRoom ===
+April is playing the guitar.
++leave
+    ->Hallway
+
+
+
+
+
+
+
+
+

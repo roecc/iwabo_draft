@@ -1,7 +1,7 @@
 (function(storyContent) {
 
     // Create ink story from the content using inkjs
-    var story = new inkjs.Story(storyContent);
+    window.story = new inkjs.Story(storyContent);
 
     var savePoint = "";
 
@@ -437,3 +437,9 @@
     }
 
 })(storyContent);
+
+function getVar (varStr) {
+    let storyVar = story.variablesState[varStr];
+    alert(storyVar);
+    return storyVar;
+}

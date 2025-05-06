@@ -1,7 +1,5 @@
 INCLUDE Act_I/Day1.ink
-
-VAR Barter = 0
-VAR Shoot = 0
+INCLUDE Misc/Skills.ink
 
 Warm sunlight falls through the window on the right, above the king-size bed. Gentle guitar noodling from the room next door and the smell of pancakes wafting from the kitchen below. 
 
