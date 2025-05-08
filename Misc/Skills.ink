@@ -21,7 +21,12 @@ VAR christian = false
 +{skillCount==0}[open carton]
     Character creation, you are what you keep.
     ->Contents
-+leave
++ [leave]
+    {skillCount != 0: 
+        You put the carton aside.
+    - else:
+        Your knee cracks as you rise from your hunched examination.
+    }
     ->Bedroom
 
 = Contents

@@ -1,3 +1,5 @@
+var delayTime = 200.0;
+
 (function(storyContent) {
 
     // Create ink story from the content using inkjs
@@ -107,7 +109,7 @@
                     }
 
                     showAfter(delay, imageElement);
-                    delay += 200.0;
+                    delay += delayTime;
                 }
 
                 // LINK: url
@@ -162,7 +164,7 @@
 
             // Fade in paragraph after a short delay
             showAfter(delay, paragraphElement);
-            delay += 200.0;
+            delay += delayTime;
         }
 
         // Create HTML choices from ink choices
@@ -203,7 +205,7 @@
 
             // Fade choice in after a short delay
             showAfter(delay, choiceParagraphElement);
-            delay += 200.0;
+            delay += delayTime;
 
             // Click on choice
             if(isClickable){
