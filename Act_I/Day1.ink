@@ -4,10 +4,10 @@ VAR interruptedApril = false
 VAR listenedApril = false
 
 === Start ===
-You starts as if from a nightmare but quickly settle yourself. You sit up at the edge of the bed, hunched forward, your face buried in your hands before they slide down, folding below your chin.
+You start, as if from a nightmare but quickly settle yourself. You sit up at the edge of the bed, hunched forward, your face buried in your hands before they slide down, folding below your chin.
 
 *[Get up]
-You stand up and look around.
+You stand and look around.
 The rooms decor is rugged yet modern and orderly almost to a fault. Everything has it's own little place and was put there with care. Pictures of you with your girls and wife adorn the walls. A large bookshelf stands in the corner and a smaller one by the bedside opposite of you. A CARTON BOX sits before the door to the hall. A stack of neatly FOLDED CLOTHES-already picked out for the day-on a chair in the corner.
 -> Bedroom
 
@@ -80,6 +80,7 @@ You are now in the Hallway. The door to APRIL's room is ajar, sunlight falling t
 * {not interruptedApril} [just listen]
     You stand in the doorframe for some time. After a while, she lets the last note of her guitar ring out and silence falls over the room like a blanket, leaving the space to the rustling of the leaves and occasional chirping of a bird from outside the window. April sinks into herself for a moment, then leans forward and stops the recoring on her phone. She turns to you with a sleepy smile, wishing you a good morning.
     ~ listenedApril = true
+    ->AprilsRoom
 * ask her what she is playing
     { not listenedApril: ->Interrupted }
     "It's nothing in particular."
@@ -90,7 +91,8 @@ You are now in the Hallway. The door to APRIL's room is ajar, sunlight falling t
     ->AprilsRoom
 * ask what's for breakfast
     { not listenedApril: ->Interrupted }
-    "How should I know? Smells like pancakes to me."
+    "How should I know?"
+    "Smells like pancakes to me."
     ->AprilsRoom
     
 + [leave]
@@ -99,7 +101,9 @@ You are now in the Hallway. The door to APRIL's room is ajar, sunlight falling t
 
 = Interrupted
     ~ interruptedApril = true
-    As you begin to speak she glares at you, putting her palm to the strings. she picks up the phone, turns it off and tosses it on her bed. "Dad, I was recording that... what do you want?"
+    As you begin to speak she glares at you, putting her palm to the strings. she picks up the phone, turns it off and tosses it on her bed. 
+    "Dad, I was recording that..."
+    "what do you want?"
     ->AprilsRoom
 
 
